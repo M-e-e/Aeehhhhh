@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: EnemyMovementSpeed
   m_EditorClassIdentifier: 
   _developerDescription: 
-  _value: 5
-  _initialValue: 5
-  _oldValue: 5
+  _value: 1
+  _initialValue: 1
+  _oldValue: 1
   Changed: {fileID: 0}
   ChangedWithHistory: {fileID: 0}
