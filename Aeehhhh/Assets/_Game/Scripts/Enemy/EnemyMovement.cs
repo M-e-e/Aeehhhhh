@@ -7,6 +7,9 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
+    [SerializeField] private AnimationHandler _animationHandler;
+    private BoolVariable isMoving;
+    
     [SerializeField] private StringConstant playerTag;
     private Transform player;
     public FloatReference moveSpeed;
@@ -16,6 +19,10 @@ public class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        isMoving = new BoolVariable();
+        isMoving.Value = false;
+        _animationHandler.CreateAnimationUnit("Moving", AnimatorControllerParameterType.Bool, isMoving);
+        
         player = AtomTags.FindByTag(playerTag.Value).transform;
         
         _rb = this.GetComponent<Rigidbody2D>();
@@ -24,6 +31,10 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update(){
         Vector3 direction = player.position - transform.position;
+        
+        //animation
+        isMoving.Value = direction.magnitude >= 1;
+        
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         _rb.rotation = angle;
         direction.Normalize();

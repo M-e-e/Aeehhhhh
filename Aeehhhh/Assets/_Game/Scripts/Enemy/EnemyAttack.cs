@@ -19,7 +19,7 @@ public class EnemyAttack : MonoBehaviour
     void Start()
     {
         player = AtomTags.FindByTag(playerTag.Value).transform;
-        
+
         Observable.EveryUpdate().Buffer(TimeSpan.FromSeconds(eachXSeconds))
             .Where(_ => attackAtThisDistance.Value >= Vector2.Distance(player.position, transform.position))
             .Subscribe(_ => _attackAction.Do(gameObject, player.position - transform.position));
