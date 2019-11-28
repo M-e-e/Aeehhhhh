@@ -79,6 +79,11 @@ public class AttackAction : AtomAction<GameObject, Vector2>
     {
         var d = Instantiate(debugPrefab, center, Quaternion.identity);
         d.transform.localScale *= attackRadius;
-        Destroy(d, attackDuration);
+        Destroy(d, attackDuration + .05f);
+        
+        Observable.EveryUpdate().Buffer(TimeSpan.FromSeconds(attackDuration)).Take(1).Subscribe(_ =>
+        {
+            d.GetComponent<SpriteRenderer>().color = Color.red;
+        });
     }
 }

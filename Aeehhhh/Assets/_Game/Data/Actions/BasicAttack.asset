@@ -20,17 +20,17 @@ MonoBehaviour:
     _variable: {fileID: 0}
   attackRadius:
     _usage: 0
-    _value: 2
+    _value: 0.5
     _constant: {fileID: 0}
     _variable: {fileID: 0}
   attackRange:
     _usage: 0
-    _value: 2
+    _value: 1
     _constant: {fileID: 0}
     _variable: {fileID: 0}
   attackDuration:
     _usage: 0
-    _value: 1
+    _value: 0.5
     _constant: {fileID: 0}
     _variable: {fileID: 0}
   targetLayer:

@@ -7,6 +7,8 @@ using UnityEngine;
 public class AttackInputPlayer : MonoBehaviour
 {
     [SerializeField] private AttackAction _attackAction;
+
+    [SerializeField] private VoidEvent punchEvent;
     
     private void Update()
     {
@@ -17,6 +19,7 @@ public class AttackInputPlayer : MonoBehaviour
             pos = Camera.main.ScreenToWorldPoint(pos);
 
             _attackAction.Do(gameObject, pos - transform.position);
+            punchEvent.Raise();
         }    
     }
 }

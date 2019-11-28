@@ -33,9 +33,12 @@ public class AnimationHandler : MonoBehaviour
 
     Action TriggerListener(string name)
     {
+        
+        
         _animator.SetTrigger(name);
         _animator.ResetTrigger(name);
-        
+
+
         return null;
     }
 
@@ -44,7 +47,7 @@ public class AnimationHandler : MonoBehaviour
         _animationUnits.Append(newUnit);
     }
 
-    public void CreateAnimationUnit(string name, AnimatorControllerParameterType type, BoolVariable boolVariable=null, IntVariable intVariable=null, FloatVariable floatVariable=null)
+    public void CreateAnimationUnit(string name, AnimatorControllerParameterType type, BoolVariable boolVariable=null, IntVariable intVariable=null, FloatVariable floatVariable=null, AtomEvent atomEvent=null)
     {
         AnimationUnit unit = ScriptableObject.CreateInstance<AnimationUnit>();
 
@@ -67,6 +70,10 @@ public class AnimationHandler : MonoBehaviour
             unit.floatVariable = floatVariable;
             FloatEvent floatEvent = ScriptableObject.CreateInstance<FloatEvent>();
             floatVariable.Changed = floatEvent;
+        }
+        else if (atomEvent != null)
+        {
+            unit.atomEvent = atomEvent;
         }
 
         AddToAnimationUnits(unit);
@@ -98,7 +105,11 @@ public class AnimationHandler : MonoBehaviour
         }
         else if (unit.atomEvent != null)
         {
-            unit.atomEvent.Register(TriggerListener(unit.name));
+            unit.atomEvent.Register(delegate {
+                _animator.ResetTrigger(unit.name); 
+                _animator.SetTrigger(unit.name);
+                Debug.Log(unit.name);
+            });
         }
     }
 }
