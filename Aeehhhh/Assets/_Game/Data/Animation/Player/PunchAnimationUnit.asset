@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af0ef9e83b16da74988e23b22e5ad69a, type: 3}
+  m_Name: PunchAnimationUnit
+  m_EditorClassIdentifier: 
+  name: Punch
+  type: 9
+  boolVariable: {fileID: 0}
+  intVariable: {fileID: 0}
+  floatVariable: {fileID: 0}
+  atomEvent: {fileID: 11400000, guid: df04b8eb66b26484286fb3daaf794949, type: 2}
