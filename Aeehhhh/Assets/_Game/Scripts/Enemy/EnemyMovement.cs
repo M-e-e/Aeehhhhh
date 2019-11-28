@@ -1,18 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityAtoms;
+using UnityAtoms.Tags;
 using UnityEditor.UIElements;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public Transform player;
+    [SerializeField] private StringConstant playerTag;
+    private Transform player;
     public FloatReference moveSpeed;
     private Rigidbody2D _rb;
     private Vector2 _movement;
 
     // Start is called before the first frame update
-    void Start(){
+    void Start()
+    {
+        player = AtomTags.FindByTag(playerTag.Value).transform;
+        
         _rb = this.GetComponent<Rigidbody2D>();
     }
 
