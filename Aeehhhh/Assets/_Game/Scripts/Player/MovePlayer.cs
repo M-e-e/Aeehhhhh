@@ -7,9 +7,13 @@ public class MovePlayer : MonoBehaviour
 {
     [SerializeField] private FloatReference speed;
 
+    [SerializeField] private BoolVariable playerIsMoving;
+    
     void Update()
     {
-        var move = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         transform.position += move * speed * Time.deltaTime;
+
+        playerIsMoving.Value = move.magnitude >= .1f;
     }
 }
