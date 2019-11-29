@@ -22,7 +22,7 @@ public class EnemyAttack : MonoBehaviour
     void Start()
     {
         attackEvent = new VoidEvent();
-        _animationHandler.CreateAnimationUnit("Punch", AnimatorControllerParameterType.Trigger, null, null, null, attackEvent);
+        _animationHandler.CreateAnimationUnit("Punch", AnimatorControllerParameterType.Trigger, atomEvent: attackEvent);
         
         Transform player = AtomTags.FindByTag(playerTag.Value).transform;
 
