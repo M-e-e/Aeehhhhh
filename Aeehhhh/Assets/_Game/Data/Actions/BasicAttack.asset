@@ -38,7 +38,7 @@ MonoBehaviour:
     m_Bits: 10240
   debugMode:
     _usage: 0
-    _value: 1
+    _value: 0
     _constant: {fileID: 0}
     _variable: {fileID: 0}
   debugPrefab: {fileID: 1233876097249618444, guid: 583dffc5ecaa0a849ad2d8c61e69f201,

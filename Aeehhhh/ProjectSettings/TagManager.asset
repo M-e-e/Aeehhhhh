@@ -44,3 +44,6 @@ TagManager:
   - name: Debug
     uniqueID: 1757005089
     locked: 0
+  - name: Character
+    uniqueID: 1412242987
+    locked: 0
