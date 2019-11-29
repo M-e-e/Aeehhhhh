@@ -30,12 +30,12 @@ public class AudioManager : MonoBehaviour
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
             s.source.playOnAwake = s.playOnAwake;
-        }
-    }
 
-    public void Start()
-    {
-        Play("BackgroundSound");
+            if (s.playOnAwake)
+            {
+                s.source.Play();
+            }
+        }
     }
 
     public void Play(string name)
@@ -48,7 +48,5 @@ public class AudioManager : MonoBehaviour
         }
         
         s.source.Play();
-        Debug.Log("Sound abgespielt");
-
     }
 }

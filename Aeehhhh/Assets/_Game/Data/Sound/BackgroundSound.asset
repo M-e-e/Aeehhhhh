@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: BackgroundSound
   m_EditorClassIdentifier: 
   name: BackgroundSound
-  clip: {fileID: 8300000, guid: 892478ed52921524d98384703718c03a, type: 3}
-  volume: 1
-  pitch: 0.5
+  clip: {fileID: 8300000, guid: b881caf6a593aec4fa29e543c1bd710d, type: 3}
+  volume: 0.044
+  pitch: 1
   loop: 1
   playOnAwake: 1
   source: {fileID: 0}
