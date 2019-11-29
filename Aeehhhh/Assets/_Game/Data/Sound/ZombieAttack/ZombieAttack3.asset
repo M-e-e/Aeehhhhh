@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf55d29501cd736468f8d823ac60fa8a, type: 3}
   m_Name: ZombieAttack3
   m_EditorClassIdentifier: 
-  name: 
-  clip: {fileID: 0}
-  volume: 0
-  pitch: 0
+  name: ZombieAttack3
+  clip: {fileID: 8300000, guid: a63b7a9f8224c3748a97f2d538cd8e46, type: 3}
+  volume: 0.1
+  pitch: 1
   loop: 0
   playOnAwake: 0
   source: {fileID: 0}
