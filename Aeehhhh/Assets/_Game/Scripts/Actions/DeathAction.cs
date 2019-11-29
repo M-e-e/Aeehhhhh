@@ -8,6 +8,6 @@ public class DeathAction : GameObjectAction
 {
     public override void Do(GameObject t1)
     {
-        Destroy(t1);
+        t1.SetActive(false);
     }
 }

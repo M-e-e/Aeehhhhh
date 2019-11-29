@@ -7,6 +7,7 @@ using UnityEngine;
 public class Health : MonoBehaviour, IDamageAble
 {
     [SerializeField] private GameObjectAction deathAction;
+    [SerializeField] private GameObjectEvent deathEvent;
     
     [SerializeField] private IntReference maxHealth;
     private int currentHealth;
@@ -23,6 +24,8 @@ public class Health : MonoBehaviour, IDamageAble
         if (currentHealth <= 0)
         {
             Debug.Log("DEATH OF " + gameObject.name);
+            Debug.Log("DEATH HAS BEEN RAISED!");
+            deathEvent.Raise(gameObject);
             deathAction.Do(gameObject);
         }
     }
