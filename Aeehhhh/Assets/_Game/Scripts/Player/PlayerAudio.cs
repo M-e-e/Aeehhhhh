@@ -14,6 +14,9 @@ public class PlayerAudio : MonoBehaviour
     public float minTime;
 
     public Sound[] sounds;
+
+    public Sound[] hitSounds;
+    
     private bool _isSoundPlaying = false;
     
     // Start is called before the first frame update
@@ -40,7 +43,15 @@ public class PlayerAudio : MonoBehaviour
         
         Sound sound = sounds[UnityEngine.Random.Range(0, sounds.Length)];
         _audioManager.Play(sound.name);
-        Debug.Log(sound.name);
         _isSoundPlaying = false;
+    }
+
+    public void StartHitSound()
+    {    
+        if (hitSounds == null) return;
+        if (hitSounds.Length == 0) return;
+        ;
+        Sound sound = hitSounds[UnityEngine.Random.Range(0, hitSounds.Length)];
+        _audioManager.Play(sound.name);
     }
 }
